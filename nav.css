@@ -1,0 +1,117 @@
+/* Your existing styles */
+
+.navbar {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar__toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Hide the toggle by default on larger screens */
+  }
+  
+  .navbar__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar__item {
+    margin-right: 10px;
+  }
+  
+  .navbar__link {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap:5px;
+  }
+  
+  .navbar__link:hover {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  
+  .navbar__link i {
+    margin-right: 5px; /* Adjust the spacing between the icon and text */
+  }
+  
+  .navbar__search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__search input {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .navbar__search button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Responsive styles */
+  
+  @media screen and (max-width: 768px) {
+    .navbar__toggle {
+      display: block; /* Show the toggle on smaller screens */
+    }
+  
+    .navbar__list {
+      flex-direction: column;
+      position: absolute;
+      top: 60px; /* Adjust the top position based on your design */
+      left: 0;
+      background-color: #f2f2f2;
+      width: 100%;
+      padding: 10px;
+      display: none;
+    }
+  
+    .navbar.open .navbar__list {
+      display: flex;
+    }
+  
+    .navbar__item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .navbar__item {
+    margin-right: 10px;
+    animation: slideIn 0.5s ease-in-out; /* Adjust the duration and timing function as needed */
+  }
+  
+  /* If you want the animation to occur only on hover, you can do the following: */
+  
+  .navbar__item:hover {
+    animation: slideIn 0.5s ease-in-out; /* Adjust the duration and timing function as needed */
+  }
+  
